@@ -1,0 +1,13 @@
+# Set of commands to block ports with ip tables on local machine
+
+# block port 50640
+sudo iptables -A OUTPUT -p udp --dport 50640 -j DROP; sudo iptables -A INPUT -p udp --dport 50640 -j DROP
+
+#Check rules
+sudo iptables -L -v -n
+
+#Flash iptables rules
+sudo iptables -F
+
+# check open ports
+sudo ss -lnu

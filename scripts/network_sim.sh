@@ -44,5 +44,5 @@ fi
 # Apply settings
 tc qdisc $ACTION dev $INTERFACE root netem delay ${LATENCY}ms ${JITTER}ms loss $LOSS%
 
-echo "Current qdisc settings for $INTERFACE:"
+echo "$(date +%H:%M:%S) Current qdisc settings for $INTERFACE:"
 tc qdisc show dev $INTERFACE
